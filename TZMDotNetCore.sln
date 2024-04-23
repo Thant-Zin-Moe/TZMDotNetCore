@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.ConsoleApp", "TZMDotNetCore.ConsoleApp\TZMDotNetCore.ConsoleApp.csproj", "{343CA8F9-D439-4687-8884-4BF0CBFF2E65}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{EB371680-C880-403A-ACBB-0E01E79EAA08}"
+	ProjectSection(SolutionItems) = preProject
+		TZMDotNetCore.sql = TZMDotNetCore.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
