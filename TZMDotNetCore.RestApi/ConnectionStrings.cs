@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TZMDotNetCore.ConsoleApp
+namespace TZMDotNetCore.RestApi.Db  
 {
     internal class ConnectionStrings
     {
@@ -14,7 +14,8 @@ namespace TZMDotNetCore.ConsoleApp
             DataSource = "LENOVO-V14\\SQLEXPRESS",
             InitialCatalog = "TZMDotNetCore",
             UserID = "sa",
-            Password = "sasa@123"
+            Password = "sasa@123",
+            TrustServerCertificate = true
         };
 
     }

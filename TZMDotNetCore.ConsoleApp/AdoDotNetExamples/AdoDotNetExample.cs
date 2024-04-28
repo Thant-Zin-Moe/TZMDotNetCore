@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TZMDotNetCore.ConsoleApp
+namespace TZMDotNetCore.ConsoleApp.AdoDotNetExamples
 {
     internal class AdoDotNetExample
     {
@@ -34,7 +34,7 @@ namespace TZMDotNetCore.ConsoleApp
             connection.Close();
             Console.WriteLine("Connection closed!");
 
-            if(dt.Rows.Count == 0)
+            if (dt.Rows.Count == 0)
             {
                 Console.WriteLine("No data found!");
                 return;

@@ -6,8 +6,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TZMDotNetCore.ConsoleApp.Dtos;
+using TZMDotNetCore.ConsoleApp.Services;
 
-namespace TZMDotNetCore.ConsoleApp
+namespace TZMDotNetCore.ConsoleApp.DapperExamples
 {
     internal class DapperExample
     {
@@ -39,7 +41,7 @@ namespace TZMDotNetCore.ConsoleApp
             using IDbConnection db = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
             var item = db.Query<BlogDto>("select * from tbl_blog where BlogId = @BlogId", new BlogDto { BlogId = id }).FirstOrDefault();
 
-            if(item is null)
+            if (item is null)
             {
                 Console.WriteLine("No data found!");
                 return;
