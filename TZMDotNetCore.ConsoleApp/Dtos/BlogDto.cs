@@ -13,7 +13,8 @@ public class BlogDto
 {
     [Key]
     public int BlogId { get; set; }
-    public string? BlogTitle { get; set; }
-    public string? BlogAuthor { get; set; }
-    public string? BlogContent { get; set; }
+    public string BlogTitle { get; set; }
+    public string BlogAuthor { get; set; }
+    public string BlogContent { get; set; }
 }
+//public record BlogEntity(int BLogId, string BlogTitle, string BlogAuthor, string BlogContent);
