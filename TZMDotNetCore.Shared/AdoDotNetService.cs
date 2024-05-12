@@ -9,11 +9,11 @@ using Newtonsoft.Json;
 
 namespace TZMDotNetCore.Shared
 {
-    public class AdoDotNetService
+    public class service
     {
         private readonly string _connectionString;
 
-        public AdoDotNetService(string connectionString)
+        public service(string connectionString)
         {
             _connectionString = connectionString;
         }
@@ -69,7 +69,7 @@ namespace TZMDotNetCore.Shared
 
             return lst[0];
         }
-        public int Execute(string query, params AdoDotNetParameter[]? parameters)
+        public int Execute(string query,params AdoDotNetParameter[]? parameters)
         {
             SqlConnection connection = new SqlConnection(_connectionString);
             connection.Open();
@@ -77,11 +77,11 @@ namespace TZMDotNetCore.Shared
             SqlCommand cmd = new SqlCommand(query, connection);
             if (parameters is not null && parameters.Length > 0)
             {
-                //foreach(var item in parameters)
-                //{
-                //    cmd.Parameters.AddWithValue(item.Name, item.Value);
-                //}
-                cmd.Parameters.AddRange(parameters.Select(item => new SqlParameter(item.Name, item.Value)).ToArray());
+                foreach (var item in parameters)
+                {
+                    cmd.Parameters.AddWithValue(item.Name, item.Value);
+                }
+                //cmd.Parameters.AddRange(parameters.Select(item => new SqlParameter(item.Name, item.Value)).ToArray());
                 //var parameterArray = parameters.Select(item => new SqlParameter(item.Name, item.Value)).ToArray();
                 //cmd.Parameters.AddRange(parameterArray);
             }

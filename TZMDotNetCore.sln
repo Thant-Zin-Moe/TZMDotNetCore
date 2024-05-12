@@ -12,7 +12,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.RestApi", "TZMDotNetCore.RestApi\TZMDotNetCore.RestApi.csproj", "{A61C4473-0C08-472C-93D2-F28861D4F547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.Shared", "TZMDotNetCore.Shared\TZMDotNetCore.Shared.csproj", "{741CFD48-4437-4E70-A3D9-D5810A8BC89D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.Shared", "TZMDotNetCore.Shared\TZMDotNetCore.Shared.csproj", "{741CFD48-4437-4E70-A3D9-D5810A8BC89D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.RestApiWithNLayer", "TZMDotNetCore.RestApiWithNLayer\TZMDotNetCore.RestApiWithNLayer.csproj", "{56D9BC46-B868-4513-899C-8B0412B2514E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,10 @@ Global
 		{741CFD48-4437-4E70-A3D9-D5810A8BC89D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{741CFD48-4437-4E70-A3D9-D5810A8BC89D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{741CFD48-4437-4E70-A3D9-D5810A8BC89D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56D9BC46-B868-4513-899C-8B0412B2514E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56D9BC46-B868-4513-899C-8B0412B2514E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56D9BC46-B868-4513-899C-8B0412B2514E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56D9BC46-B868-4513-899C-8B0412B2514E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

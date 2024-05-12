@@ -13,7 +13,7 @@ namespace TZMDotNetCore.RestApi.Controllers
     [ApiController]
     public class BlogAdoDotNet2Controller : ControllerBase
     {
-        private readonly AdoDotNetService _adoDotNetService = new AdoDotNetService(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
+        private readonly service _adoDotNetService = new service(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
         [HttpGet]
         public IActionResult GetBlogs()
         {
@@ -29,7 +29,7 @@ namespace TZMDotNetCore.RestApi.Controllers
             string query = "select * from tbl_blog where BlogId = @BlogId";
             //AdoDotNetParameter[] parameters = new AdoDotNetParameter[1];
             //parameters[0] = new AdoDotNetParameter("@BlogId", id);
-            //var lst = _adoDotNetService.Query<BlogModel>(query, parameters);
+            //var item = _adoDotNetService.Query<BlogModel>(query, new AdoDotNetParameter("@BlogId", id));
 
             var item = _adoDotNetService.QueryFirstOrDefault<BlogModel>(query, new AdoDotNetParameter("@BlogId", id));
 
@@ -44,7 +44,7 @@ namespace TZMDotNetCore.RestApi.Controllers
 
             //connection.Close();
 
-            if(item is null)
+            if (item is null)
             {
                 return NotFound("No data found!");
             }
@@ -81,17 +81,12 @@ namespace TZMDotNetCore.RestApi.Controllers
       ,[BlogAuthor] = @BlogAuthor
       ,[BlogContent] = @BlogContent
  WHERE BlogId = @BlogId";
-            SqlConnection connection = new SqlConnection(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
-            connection.Open();
-
-            SqlCommand cmd = new SqlCommand(query, connection);
-            cmd.Parameters.AddWithValue("@BlogId", id);
-            cmd.Parameters.AddWithValue("@BlogTitle", blog.BlogTitle);
-            cmd.Parameters.AddWithValue("@BlogAuthor", blog.BlogAuthor);
-            cmd.Parameters.AddWithValue("@BlogContent", blog.BlogContent);
-            int result = cmd.ExecuteNonQuery();
-
-            connection.Close();
+            int result = _adoDotNetService.Execute(query,
+                        new AdoDotNetParameter("@BlogId", id),
+                        new AdoDotNetParameter("@BlogTitle", blog.BlogTitle),
+                        new AdoDotNetParameter("@BlogAuthor", blog.BlogAuthor),
+                        new AdoDotNetParameter("@BlogContent", blog.BlogContent)
+                    );
             string message = result > 0 ? "Updating successful." : "Updating failed";
 
             return Ok(message);
