@@ -51,31 +51,20 @@ namespace TZMDotNetCore.RestApiWithNLayer.Features.Blog
             string message = result > 0 ? "Updating successful." : "Updating failed.";
             return Ok(message);
         }
-        //[HttpPatch("{id}")]
-        //public IActionResult Patch(int id, BlogModel blog)
-        //{
-        //    var item = _context.Blogs.FirstOrDefault(x => x.BlogId == id);
-        //    if (item is null)
-        //    {
-        //        return NotFound("No data found!");
-        //    }
-        //    if (!string.IsNullOrEmpty(blog.BlogTitle))
-        //    {
-        //        item.BlogTitle = blog.BlogTitle;
-        //    }
-        //    if (!string.IsNullOrEmpty(blog.BlogAuthor))
-        //    {
-        //        item.BlogAuthor = blog.BlogAuthor;
-        //    }
-        //    if (!string.IsNullOrEmpty(blog.BlogContent))
-        //    {
-        //        item.BlogContent = blog.BlogContent;
-        //    }
-        //    var result = _context.SaveChanges();
+        [HttpPatch("{id}")]
+        public IActionResult Patch(int id, BlogModel blog)
+        {
+            var item = _bL_Blog.GetBlogs();
+            if (item is null)
+            {
+                return NotFound("No data found!");
+            }
 
-        //    string message = result > 0 ? "Updating successful." : "Updating failed.";
-        //    return Ok(message);
-        //}
+            var result = _bL_Blog.PatchBlog(id, blog);
+
+            string message = result > 0 ? "Updating successful." : "Updating failed.";
+            return Ok(message);
+        }
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
