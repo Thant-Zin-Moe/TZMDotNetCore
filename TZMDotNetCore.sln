@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.RestApiWithNL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.ConsoleAppHttpClient", "TZMDotNetCore.ConsoleAppHttpClient\TZMDotNetCore.ConsoleAppHttpClient.csproj", "{DE494A86-C801-4D19-B54B-5A1F1DFB21A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.ConsoleAppHttpClientExamples", "TZMDotNetCore.ConsoleAppHttpClientExamples\TZMDotNetCore.ConsoleAppHttpClientExamples.csproj", "{75695EEE-62E8-464C-89D6-1F126C5AB1D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.ConsoleAppHttpClientExamples", "TZMDotNetCore.ConsoleAppHttpClientExamples\TZMDotNetCore.ConsoleAppHttpClientExamples.csproj", "{75695EEE-62E8-464C-89D6-1F126C5AB1D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.ConsoleAppRestClientExamples", "TZMDotNetCore.ConsoleAppRestClientExamples\TZMDotNetCore.ConsoleAppRestClientExamples.csproj", "{E511EE0F-BC0D-4B99-8ADC-69B9D1058BA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +52,10 @@ Global
 		{75695EEE-62E8-464C-89D6-1F126C5AB1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75695EEE-62E8-464C-89D6-1F126C5AB1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75695EEE-62E8-464C-89D6-1F126C5AB1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E511EE0F-BC0D-4B99-8ADC-69B9D1058BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E511EE0F-BC0D-4B99-8ADC-69B9D1058BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E511EE0F-BC0D-4B99-8ADC-69B9D1058BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E511EE0F-BC0D-4B99-8ADC-69B9D1058BA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
