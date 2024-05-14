@@ -8,10 +8,6 @@ namespace TZMDotNetCore.RestApiWithNLayer.Features.LatHtaukBayDin
     [ApiController]
     public class LatHtaukBayDinController : ControllerBase
     {
-        public LatHtaukBayDinController()
-        {
-
-        }
         private async Task<LatHtaukBayDin> GetDataAsync()
         {
             string jsonStr = await System.IO.File.ReadAllTextAsync("data.json");
