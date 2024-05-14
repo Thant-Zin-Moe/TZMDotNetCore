@@ -109,7 +109,7 @@ namespace TZMDotNetCore.ConsoleAppRestClientExamples
 
             var restRequest = new RestRequest($"{_blogEndpoint}/{id}", Method.Patch);
             restRequest.AddJsonBody(blogModel);
-            var response = await _client.PostAsync(restRequest);
+            var response = await _client.PatchAsync(restRequest);
             if (response.IsSuccessStatusCode)
             {
                 string message = response.Content!;
