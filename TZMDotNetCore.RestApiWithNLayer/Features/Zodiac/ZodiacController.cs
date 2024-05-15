@@ -6,7 +6,7 @@ namespace TZMDotNetCore.RestApiWithNLayer.Features.Zodiac
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ZodiacConroller : ControllerBase
+    public class ZodiacController : ControllerBase
     {
         private async Task<Zodiac> GetDataAsync()
         {
