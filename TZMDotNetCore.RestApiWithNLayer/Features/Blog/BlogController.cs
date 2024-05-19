@@ -75,7 +75,7 @@ namespace TZMDotNetCore.RestApiWithNLayer.Features.Blog
             }
             var result = _bL_Blog.DeleteBlog(id);
 
-            string message = result > 0 ? "Updating successful." : "Updating failed.";
+            string message = result > 0 ? "Deleting successful." : "Deleting failed.";
             return Ok(message);
         }
     }
