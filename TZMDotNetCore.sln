@@ -26,7 +26,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.PizzaApi", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.ConsoleAppRefitExamples", "TZMDotNetCore.ConsoleAppRefitExamples\TZMDotNetCore.ConsoleAppRefitExamples.csproj", "{3AFEDD60-D278-4A80-9D42-E34F0BBBBA2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.WinFormsApp", "TZMDotNetCore.WinFormsApp\TZMDotNetCore.WinFormsApp.csproj", "{475CCA1D-17ED-4C9F-96C8-0608D49AD3BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.WinFormsApp", "TZMDotNetCore.WinFormsApp\TZMDotNetCore.WinFormsApp.csproj", "{475CCA1D-17ED-4C9F-96C8-0608D49AD3BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.WinFormsAppSqlInjection", "TZMDotNetCore.WinFormsAppSqlInjection\TZMDotNetCore.WinFormsAppSqlInjection.csproj", "{542C7ABF-1B45-44B1-AE66-89E627B9D444}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.NLayer.UI", "TZMDotNetCore.NLayer.UI\TZMDotNetCore.NLayer.UI.csproj", "{27EA726E-14A2-4DF8-892B-DFBE7450EB68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.NLayer.BusinessLogic", "TZMDotNetCore.NLayer.BusinessLogic\TZMDotNetCore.NLayer.BusinessLogic.csproj", "{531780EF-D0AC-4856-823F-B580B34AAC4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.NLayer.DataAccess", "TZMDotNetCore.NLayer.DataAccess\TZMDotNetCore.NLayer.DataAccess.csproj", "{9584B0AD-B971-4598-8C39-823C9BCF8CC6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +82,22 @@ Global
 		{475CCA1D-17ED-4C9F-96C8-0608D49AD3BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{475CCA1D-17ED-4C9F-96C8-0608D49AD3BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{475CCA1D-17ED-4C9F-96C8-0608D49AD3BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{542C7ABF-1B45-44B1-AE66-89E627B9D444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{542C7ABF-1B45-44B1-AE66-89E627B9D444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{542C7ABF-1B45-44B1-AE66-89E627B9D444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{542C7ABF-1B45-44B1-AE66-89E627B9D444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27EA726E-14A2-4DF8-892B-DFBE7450EB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27EA726E-14A2-4DF8-892B-DFBE7450EB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27EA726E-14A2-4DF8-892B-DFBE7450EB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27EA726E-14A2-4DF8-892B-DFBE7450EB68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{531780EF-D0AC-4856-823F-B580B34AAC4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{531780EF-D0AC-4856-823F-B580B34AAC4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{531780EF-D0AC-4856-823F-B580B34AAC4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{531780EF-D0AC-4856-823F-B580B34AAC4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9584B0AD-B971-4598-8C39-823C9BCF8CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9584B0AD-B971-4598-8C39-823C9BCF8CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9584B0AD-B971-4598-8C39-823C9BCF8CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9584B0AD-B971-4598-8C39-823C9BCF8CC6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
