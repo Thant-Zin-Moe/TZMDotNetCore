@@ -50,7 +50,11 @@ function createBlog(title, author, content) {
 
     const jsonBlog = JSON.stringify(lst);
     localStorage.setItem(tblBlog, jsonBlog);
-    successMessage("Saving Successful.");
+    Notiflix.Loading.standard();
+    setTimeout(() => {
+        Notiflix.Loading.remove();
+        successMessage("Saving Successful.");
+    }, 3000);
     clearControls();
 }
 
@@ -78,27 +82,65 @@ function updateBlog(id, title, author, content) {
 
     const jsonBlog = JSON.stringify(lst);
     localStorage.setItem(tblBlog, jsonBlog);
+    Notiflix.Loading.standard();
+    setTimeout(() => {
+        Notiflix.Loading.remove();
+        successMessage("Updating Successful.");
+    }, 3000);
 
-    successMessage("Updating Successful.");
 }
 
 function deleteBlog(id) {
-    let result = confirm("Are you sure want to delete?");
-    if (!result) return;
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
 
-    let lst = getBLogs();
+            let lst = getBLogs();
 
-    const items = lst.filter(x => x.id === id);
-    if (items.length == 0) {
-        console.log("No data found.");
-        return;
-    }
-    lst = lst.filter(x => x.id !== id);
-    const jsonBlog = JSON.stringify(lst);
-    localStorage.setItem(tblBlog, jsonBlog);
-
-    successMessage("Deleting Successful.");
-    getBlogTable();
+            const items = lst.filter(x => x.id === id);
+            if (items.length == 0) {
+                console.log("No data found.");
+                Notiflix.Notify.failure('no data found!');
+                return;
+            }
+            lst = lst.filter(x => x.id !== id);
+            const jsonBlog = JSON.stringify(lst);
+            localStorage.setItem(tblBlog, jsonBlog);
+            Notiflix.Loading.standard();
+            setTimeout(() => {
+                Notiflix.Loading.remove();
+                swalWithBootstrapButtons.fire({
+                    title: "Deleted!",
+                    text: "Deleting successful!",
+                    icon: "success"
+                });
+            }, 3000);
+            getBlogTable();
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelled",
+                text: "Cancel deleting!",
+                icon: "error"
+            });
+        }
+    });
 }
 
 function uuidv4() {
@@ -133,11 +175,19 @@ $('#btnSave').click(function () {
 })
 
 function successMessage(message) {
-    alert(message);
+    Swal.fire({
+        title: "Success!",
+        text: message,
+        icon: "success"
+    });
 }
 
 function errorMessage(message) {
-    alert(message);
+    Swal.fire({
+        title: "Error!",
+        text: message,
+        icon: "error"
+    });
 }
 
 function clearControls() {
