@@ -1,7 +1,7 @@
 const tblBlog = "blogs";
 let blogId = null;
 getBlogTable();
-
+// testConfirmMessage();
 
 // readBlog();
 // createBlog();
@@ -54,6 +54,7 @@ function createBlog(title, author, content) {
     setTimeout(() => {
         Notiflix.Loading.remove();
         successMessage("Saving Successful.");
+        getBlogTable();
     }, 3000);
     clearControls();
 }
@@ -86,29 +87,61 @@ function updateBlog(id, title, author, content) {
     setTimeout(() => {
         Notiflix.Loading.remove();
         successMessage("Updating Successful.");
+        getBlogTable();
     }, 3000);
+    clearControls();
+}
+function deleteBlog2(id) {
+    let result = confirm("Are you sure want to delete?");
+    if (!result) return;
+    let lst = getBLogs();
 
+    const items = lst.filter(x => x.id === id);
+    if (items.length == 0) {
+        console.log("No data found.");
+        return;
+    }
+    lst = lst.filter(x => x.id !== id);
+    const jsonBlog = JSON.stringify(lst);
+    localStorage.setItem(tblBlog, jsonBlog);
+    getBlogTable();
 }
 
-function deleteBlog(id) {
-    const swalWithBootstrapButtons = Swal.mixin({
-        customClass: {
-            confirmButton: "btn btn-success",
-            cancelButton: "btn btn-danger"
-        },
-        buttonsStyling: false
-    });
-    swalWithBootstrapButtons.fire({
-        title: "Are you sure?",
-        text: "You won't be able to revert this!",
+function deleteBlog3(id) {
+    Swal.fire({
+        title: "Confirm",
+        text: "Are you sure want to delete?",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, cancel!",
-        reverseButtons: true
+        confirmButtonText: "Yes"
     }).then((result) => {
-        if (result.isConfirmed) {
+        if (!result.isConfirmed) return;
+        let lst = getBLogs();
 
+        const items = lst.filter(x => x.id === id);
+        if (items.length == 0) {
+            console.log("No data found.");
+            Notiflix.Notify.failure('no data found!');
+            return;
+        }
+        lst = lst.filter(x => x.id !== id);
+        const jsonBlog = JSON.stringify(lst);
+        localStorage.setItem(tblBlog, jsonBlog);
+        Notiflix.Loading.standard();
+        setTimeout(() => {
+            Notiflix.Loading.remove();
+            swalWithBootstrapButtons.fire({
+                title: "Deleted!",
+                text: "Deleting successful!",
+                icon: "success"
+            });
+            getBlogTable();
+        }, 3000);
+    });
+}
+function deleteBlog(id) {
+    confirmMessage("Are you sure want to delete?").then(
+        function (value) {
             let lst = getBLogs();
 
             const items = lst.filter(x => x.id === id);
@@ -123,29 +156,10 @@ function deleteBlog(id) {
             Notiflix.Loading.standard();
             setTimeout(() => {
                 Notiflix.Loading.remove();
-                swalWithBootstrapButtons.fire({
-                    title: "Deleted!",
-                    text: "Deleting successful!",
-                    icon: "success"
-                });
+                successMessage('Deleting successful.');
+                getBlogTable();
             }, 3000);
-            getBlogTable();
-        } else if (
-            /* Read more about handling dismissals below */
-            result.dismiss === Swal.DismissReason.cancel
-        ) {
-            swalWithBootstrapButtons.fire({
-                title: "Cancelled",
-                text: "Cancel deleting!",
-                icon: "error"
-            });
         }
-    });
-}
-
-function uuidv4() {
-    return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
-        (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
     );
 }
 
@@ -171,24 +185,7 @@ $('#btnSave').click(function () {
         blogId = null;
     }
 
-    getBlogTable();
 })
-
-function successMessage(message) {
-    Swal.fire({
-        title: "Success!",
-        text: message,
-        icon: "success"
-    });
-}
-
-function errorMessage(message) {
-    Swal.fire({
-        title: "Error!",
-        text: message,
-        icon: "error"
-    });
-}
 
 function clearControls() {
     $('#txtTitle').val('');
