@@ -9,11 +9,14 @@ using TZMDotNetCore.RestApi.Models;
 
 namespace TZMDotNetCore.RestApi.Db;
 
-internal class AppDbContext : DbContext
+public class AppDbContext : DbContext
 {
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public AppDbContext(DbContextOptions options) : base(options)
     {
-        optionsBuilder.UseSqlServer(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
     }
+    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //{
+    //    optionsBuilder.UseSqlServer(ConnectionStrings.sqlConnectionStringBuilder.ConnectionString);
+    //}
     public DbSet<BlogModel> Blogs { get; set; }
 }

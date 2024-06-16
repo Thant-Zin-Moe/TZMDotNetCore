@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace TZMDotNetCore.Shared
 {
-    public class service
+    public class AdoDotNetService
     {
         private readonly string _connectionString;
 
