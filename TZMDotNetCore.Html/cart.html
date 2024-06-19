@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/src/notiflix.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="./DataTables/datatables.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h3 class="text-center mt-3">Product</h3>
+    <div class="mt-5 offset-sm-1 col-sm-10 col-md-8 offset-md-2 offset-lg-3 col-lg-6">
+        <label for="formGroupExampleInput" class="form-label">Enter product name</label>
+        <input type="text" class="form-control" id="txtName">
+    </div>
+    <div class="mt-3 offset-sm-1 col-sm-10 col-md-8 offset-md-2 offset-lg-3 col-lg-6">
+        <label for="formGroupExampleInput2" class="form-label">Description</label>
+        <input type="text" class="form-control" id="txtDescription">
+    </div>
+    <div class="mt-3 offset-sm-1 col-sm-10 col-md-8 offset-md-2 offset-lg-3 col-lg-6">
+        <label for="formGroupExampleInput2" class="form-label">Price</label>
+        <input type="text" class="form-control" id="txtPrice">
+    </div>
+    <div class="mt-3 offset-sm-1 col-sm-10 col-md-8 offset-md-2 offset-lg-3 col-lg-6">
+        <button type="button" class="btn btn-outline-dark">Cencel</button>
+        <button type="button" id="btnSave" class="btn btn-outline-success">Save</button>
+    </div>
+    <!-- product table -->
+    <div class="container">
+        <h1 class="mt-5 mb-2">Product Table</h1>
+        <table class="table" id="datatable">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Price</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tBody"></tbody>
+        </table>
+    </div>
+    <!-- product table -->
+    <!-- cart table -->
+    <div class="container">
+        <h1 class="mt-5 mb-2">Cart Table</h1>
+        <table class="table" id="cartDataTable">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th>Total Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cartTable"></tbody>
+        </table>
+    </div>
+    <!-- cart table -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.7/dist/notiflix-aio-3.2.7.min.js"
+        integrity="sha256-G6sj3uSY1Rtnyomq54b5wiwwe2+A5Zym254DHutrXM4=" crossorigin="anonymous"></script>
+    <script src="./DataTables/datatables.min.js"></script>
+    <script src="custom.js"></script>
+    <script src="product.js"></script>
+</body>
+
+</html>
