@@ -36,7 +36,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.NLayer.Busine
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.NLayer.DataAccess", "TZMDotNetCore.NLayer.DataAccess\TZMDotNetCore.NLayer.DataAccess.csproj", "{9584B0AD-B971-4598-8C39-823C9BCF8CC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.MinimalApi", "TZMDotNetCore.MinimalApi\TZMDotNetCore.MinimalApi.csproj", "{044F400A-66C3-4E04-8F9E-ECE5494C71E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TZMDotNetCore.MinimalApi", "TZMDotNetCore.MinimalApi\TZMDotNetCore.MinimalApi.csproj", "{044F400A-66C3-4E04-8F9E-ECE5494C71E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TZMDotNetCore.MvcApp", "TZMDotNetCore.MvcApp\TZMDotNetCore.MvcApp.csproj", "{DD6B627E-C250-410A-A7CF-F264D828C8EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -104,6 +106,10 @@ Global
 		{044F400A-66C3-4E04-8F9E-ECE5494C71E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{044F400A-66C3-4E04-8F9E-ECE5494C71E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{044F400A-66C3-4E04-8F9E-ECE5494C71E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD6B627E-C250-410A-A7CF-F264D828C8EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD6B627E-C250-410A-A7CF-F264D828C8EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD6B627E-C250-410A-A7CF-F264D828C8EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD6B627E-C250-410A-A7CF-F264D828C8EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
