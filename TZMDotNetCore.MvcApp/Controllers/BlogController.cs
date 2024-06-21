@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TZMDotNetCore.MvcApp.Db;
+using TZMDotNetCore.MvcApp.Models;
 
 namespace TZMDotNetCore.MvcApp.Controllers
 {
@@ -17,6 +18,22 @@ namespace TZMDotNetCore.MvcApp.Controllers
         {
             var lst = await _db.Blogs.ToListAsync();
             return View(lst);
+        }
+
+        [ActionName("Create")]
+        public IActionResult BlogCreate()
+        {
+            return View("BlogCreate");
+        }
+
+        [HttpPost]
+        [ActionName("Save")]
+        public async Task<IActionResult> BlogCreate(BlogModel blog)
+        {
+            await _db.Blogs.AddAsync(blog);
+            var result = await _db.SaveChangesAsync();
+            //return View("BlogCreate");
+            return Redirect("/Blog");
         }
     }
 }
